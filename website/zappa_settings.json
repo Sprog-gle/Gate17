@@ -1,0 +1,10 @@
+{
+    "space": {
+        "app_function": "__init__.app",
+        "aws_region": "ap-southeast-2",
+        "domain": "gate17.space",
+        "profile_name": "learningsandpitadmin",
+        "s3_bucket": "zappa-1xk0t1wbv",
+        "certificate_arn": "arn:aws:acm:us-east-1:146609405994:certificate/e022c103-bf42-4142-b9d2-57415376142a"
+    }
+}
