@@ -1,0 +1,27 @@
+mport json
+import csv
+
+swamps = []
+with open("/Users/michael/govhack/nz-swamp-polygons-topo-1250k.csv", 'r') as fh:
+    reader = csv.reader(fh)
+    raw = your_list = list(reader)
+    for i in range(1, len(raw)):
+        polygonStr = raw[i][0]
+        polygonStr = polygonStr.replace("POLYGON ((", "").replace("))", "")
+        polygons = polygonStr.split("),(")
+        id = raw[i][1]
+        j = 0
+        for polyLine in polygons:
+            polyId = "{0}-{1}".format(id, j)
+            wayPoints = polyLine.split(",")
+            hereWaypoints = []
+            for wayPointStr in wayPoints:
+                wayPointStr = wayPointStr.replace("(", "")
+                wp = wayPointStr.split(" ")
+                lng = float(wp[0])
+                lat = float(wp[1])
+                hereWaypoints.append({"lat": lat, "lng": lng})
+            j = j+1
+            swamps.append({polyId: hereWaypoints})
+
+print(json.dumps({"swamps":swamps}))
