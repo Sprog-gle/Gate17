@@ -15,12 +15,13 @@ import RaisedButton from "material-ui/RaisedButton";
 import FlatButton from "material-ui/FlatButton";
 import { Step, Stepper, StepLabel, StepContent } from "material-ui/Stepper";
 
-import states from "../../states/form";
+import store from "../../store";
+import states from "../../states";
 import "./questions.css";
 
-const { UPDATE_SEVERITY } = states.actions;
+const { FORM_COMPLETED } = states.actions;
 
-const updateSeverity = (event, index, value) => UPDATE_SEVERITY(value);
+//const updateSeverity = (event, index, value) => UPDATE_SEVERITY(value);
 
 class Questions extends Component {
   state = {
@@ -140,9 +141,23 @@ class Questions extends Component {
     const { finished, stepIndex } = this.state;
 
     if (this.state.stepIndex > 7) {
-      const request = `?dropdown={this.state.dropdown}&name={this.state.name}&age={this.state.age}
-      &severity={this.state.severity}&date={this.state.date}&doesKnowName={this.state.doesKnowName}
-      &doesKnowWhere={this.state.doesKnowWhere}&doesRecognize={this.state.doesRecognize}`;
+      const request =
+        "?dropdown=" +
+        this.state.dropdown +
+        "&name=" +
+        this.state.name +
+        "&age=" +
+        this.state.age +
+        "&severity=" +
+        this.state.severity +
+        "&date=" +
+        this.state.date +
+        "&doesKnowName=" +
+        this.state.doesKnowName +
+        "&doesKnowWhere=" +
+        this.state.doesKnowWhere +
+        "&doesRecognize=" +
+        this.state.doesRecognize;
       /*fetch("Api link" + request)
         .then(response => response.json())
         .then(json => console.log(json));*/
@@ -162,6 +177,8 @@ class Questions extends Component {
       );
 
       console.log(request);
+
+      store.dispatch(FORM_COMPLETED(true));
     }
 
     return (

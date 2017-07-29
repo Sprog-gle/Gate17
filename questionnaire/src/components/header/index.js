@@ -38,25 +38,6 @@ export default class Header extends Component {
       />
     ];
 
-    return (
-      <AppBar
-        iconElementLeft={Logo}
-        iconElementRight={
-          <div>
-            <RaisedButton label="Questionnaire" onClick={this.handleOpen} />
-            <Dialog
-              title="Dialog With Actions"
-              actions={actions}
-              modal={false}
-              open={this.state.open}
-              onRequestClose={this.handleClose}
-            >
-              Test
-            </Dialog>
-          </div>
-        }
-        className="header"
-      />
-    );
+    return <AppBar iconElementLeft={Logo} className="header" />;
   }
 }

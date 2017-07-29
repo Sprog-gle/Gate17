@@ -1,7 +1,9 @@
 import * as actionTypes from "./actionTypes";
 
 const initialState = {
-  severity: "Mild"
+  severity: "Mild",
+  completed: false,
+  modalOpen: false
 };
 
 const reducer = (state = initialState, payload) => {
@@ -10,6 +12,18 @@ const reducer = (state = initialState, payload) => {
       return {
         ...state,
         severity: payload.severity
+      };
+    }
+    case actionTypes.FORM_COMPLETED: {
+      return {
+        ...state,
+        completed: payload.completed
+      };
+    }
+    case actionTypes.TOGGLE_MODAL: {
+      return {
+        ...state,
+        modalOpen: payload.modalOpen
       };
     }
     default:

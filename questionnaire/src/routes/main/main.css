@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1350px) {
+  .home {
+    flex-direction: row;
+  }
+}
+
+.selectionWrapper {
+  width: 100%;
+}

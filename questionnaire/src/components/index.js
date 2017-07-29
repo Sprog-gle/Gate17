@@ -5,5 +5,6 @@ import Map from "./map";
 import Form from "./form";
 import Modal from "./modal";
 import Dropdown from "./dropdown";
+import Selection from "./selection";
 
-export { Header, Footer, TextInput, Map, Form, Modal, Dropdown };
+export { Header, Footer, TextInput, Map, Form, Modal, Dropdown, Selection };

@@ -1,0 +1,5 @@
+export const UPDATE_SEVERITY = "UPDATE_SEVERITY";
+
+export const FORM_COMPLETED = "FORM_COMPLETED";
+
+export const TOGGLE_MODAL = "TOGGLE_MODAL";

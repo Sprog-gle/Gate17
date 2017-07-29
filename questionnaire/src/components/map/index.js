@@ -3,6 +3,10 @@ import ReactDOM from "react-dom";
 import "./map.css";
 
 export default class Map extends Component {
+  componentWillMount() {
+    document.getElementById("map").style.display = "block";
+  }
+
   componentDidMount() {
     const platform = new window.H.service.Platform({
       app_id: "BtRgpFTmtEuUrzEKGY7W",
@@ -18,7 +22,7 @@ export default class Map extends Component {
 
     var defaultLayers = platform.createDefaultLayers();
     var map = new window.H.Map(
-      document.getElementsByClassName("root"),
+      document.getElementById("map"),
       defaultLayers.satellite.map
     );
     var behavior = new window.H.mapevents.Behavior(

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import { formState } from "./states/form";
+import appState from "./states";
 
 export default combineReducers({
-  [formState.constants.NAME]: formState.reducer
+  app: appState.reducer
 });
