@@ -1,0 +1,43 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-areas: ". severity ." ". name ." ". age ." ". describe ."
+    ". lastSeen ." ". know ." ". when ." ". recognize ." ". submit submit";
+}
+
+.severity {
+  grid-area: severity;
+}
+
+.name {
+  grid-area: name;
+}
+
+.age {
+  grid-area: age;
+}
+
+.describe {
+  grid-area: describe;
+}
+
+.lastSeen {
+  grid-area: lastSeen;
+}
+
+.know {
+  grid-area: know;
+}
+
+.when {
+  grid-area: when;
+}
+
+.recognize {
+  grid-area: recognize;
+}
+
+.submit {
+  grid-area: submit;
+}

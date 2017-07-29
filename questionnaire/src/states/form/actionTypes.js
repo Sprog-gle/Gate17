@@ -1,0 +1,1 @@
+export const UPDATE_SEVERITY = "form/UPDATE_SEVERITY";

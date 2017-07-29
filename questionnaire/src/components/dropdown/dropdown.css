@@ -1,0 +1,15 @@
+/*.dropdownComponent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "title title title" "dropdown dropdown dropdown"
+    "dropdown dropdown dropdown";
+}
+
+.question {
+  grid-area: title;
+}
+
+.dropdown {
+  grid-area: dropdown;
+}*/

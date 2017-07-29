@@ -4,21 +4,17 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import registerServiceWorker from "./registerServiceWorker";
 
-import Question1 from "./routes/question1";
+import Questions from "./routes/question";
 import "./index.css";
 
 injectTapEventPlugin();
 
 const App = () =>
   <MuiThemeProvider>
-    <Question1 />
+    <Questions />
   </MuiThemeProvider>;
 
-const AfterMap = () =>
-  <MuiThemeProvider>
-    <div>Test</div>
-  </MuiThemeProvider>;
+const AfterMap = () => <div>Test</div>;
 
 ReactDOM.render(<App />, document.getElementById("root"));
-ReactDOM.render(<AfterMap />, document.getElementById("after"));
 registerServiceWorker();
