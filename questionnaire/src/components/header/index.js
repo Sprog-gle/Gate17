@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import Dialog from "material-ui/Dialog";
+import FlatButton from "material-ui/FlatButton";
 import RaisedButton from "material-ui/RaisedButton";
 
-import Gate17Logo from "./gate-17logo1.png";
+import Gate17Logo from "./logo.png";
 
 import "./header.css";
 
@@ -23,15 +24,29 @@ export default class Header extends Component {
   };
 
   render() {
-    console.log(this.state.open);
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose}
+      />
+    ];
+
     return (
       <AppBar
         iconElementLeft={Logo}
         iconElementRight={
           <div>
-            <RaisedButton label="Questionnaire" onTouchTap={this.handleOpen} />
+            <RaisedButton label="Questionnaire" onClick={this.handleOpen} />
             <Dialog
               title="Dialog With Actions"
+              actions={actions}
               modal={false}
               open={this.state.open}
               onRequestClose={this.handleClose}
