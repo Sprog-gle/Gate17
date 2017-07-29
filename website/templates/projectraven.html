@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Project Raven</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+
+
+    <div id="home" class="grid">
+        <a class="modal-trigger" href="#about"><img class="responsive-img center-align" style="position:absolute;top: 50%;left: 50%;width: 200px;height: 200px;margin-top: -100px; margin-left: -100px;" src="{{url_for('static', filename='images/ravenLogo.svg')}}" /></a>
+        <div class="item-l valign-wrapper">
+            <div class="center-align" style="width:100%;">
+                <h1 class="align-center flow-text white-text">Find</h1>
+            </div>
+        </div>
+        <div class="item-r valign-wrapper" href="#lost">
+            <div class="center-align" style="width:100%;">
+                <h1 class="align-center flow-text white-text">Lost</h1></div>
+        </div>
+        <div class="item-b valign-wrapper">
+            <div class="center-align" style="width:100%;">
+                <h3 class="align-center flow-text white-text">Manage</h3>
+            </div>
+        </div>
+        <div id="about" class="modal">
+            <div class="modal-content">
+                <h4>Raven</h4>
+                <p class="flow-text">Is an application to crowd source resource to help with finding the lost.</p>
+            </div>
+        </div>
+        <div id="lost" class="modal">
+            <div class="modal-content">
+                <h3 class="center-align">Lost</h3>
+                <div class="center-align">
+                    <a id="lostuser" class="waves-effect waves-dark">
+                        <p class="flow-text center-align black-text">
+                            Are you lost?
+                        </p>
+                    </a>
+                </div>
+                <div class="center-align">
+                    <a class="waves-effect waves-dark">
+                        <p class="flow-text center-align black-text">
+                            Are you concerned a family member or friend is lost?
+                        </p>
+                    </a>
+                </div>
+                <div class="center-align">
+                    <a class="waves-effect waves-dark">
+                        <p class="flow-text center-align black-text">
+                            Have you lost a pet?
+                        </p>
+                    </a>
+                </div>
+                <div class="center-align">
+                    <a class="waves-effect waves-dark">
+                        <p class="flow-text center-align black-text">
+                            Have you lost a possession?
+                        </p>
+                    </a>
+                </div>
+                <div class="center-align">
+                    <a class="waves-effect waves-dark">
+                        <p class="flow-text center-align black-text">
+                            Have you lost something else?
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="map" class="hide" style="height: 100vh;background:grey;z-index:1;">
+
+        <div class="fixed-action-btn horizontal">
+            <a class="btn-floating btn-large red tooltipped" data-position="top" data-delay="20" data-tooltip="show map layers">
+                <i class="large material-icons">menu</i>
+            </a>
+            <ul>
+                <li><a id="rapidaction" class="btn-floating blue tooltipped" data-position="top" data-delay="20" data-tooltip="show rapids"><i class="material-icons">pool</i></a></li>
+                <li><a id="residentialaction" class="btn-floating red darken-1 tooltipped" data-position="top" data-delay="20" data-tooltip="residential areas"><i class="material-icons">location_city</i></a></li>
+                <li><a id="swampaction" class="btn-floating black tooltipped" data-position="top" data-delay="20" data-tooltip="swamp areas"><i class="material-icons">nature_people</i></a></li>
+                <li><a id="tidalaction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="tidal areas"><i class="material-icons">opacity</i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/init.js')}}"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-clustering.js"></script>
+    <script type="text/javascript" src="https://js.cit.datalens.api.here.com/2.5/mapsjs-datalens.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="{{url_for('static', filename='js/map.js')}}"></script>
+</body>
+
+</html>

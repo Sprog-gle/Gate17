@@ -59,7 +59,7 @@ html{
   }
   .grid{
     grid-template-rows: 100vh 100vh 100vh;
-    grid-template-columns: 49vw 49vw;
+    grid-template-columns: 49.75vw 49.75vw;
     grid-row-gap: .5vw;
     grid-row-gap: .5vw;
     grid-template-areas: "left left"
@@ -83,7 +83,7 @@ html{
   }
   .grid{
     grid-template-rows: 100vh 50vh;
-    grid-template-columns: 49vw 49vw;
+    grid-template-columns: 49.75vw 49.75vw;
     grid-row-gap: .5vw;
     grid-column-gap: .5vw;
     grid-template-areas: "left right"
@@ -102,7 +102,7 @@ html{
   }
   .grid{
     grid-template-rows: 100vh 50vh;
-    grid-template-columns: 49vw 49vw;
+    grid-template-columns: 49.75vw 49.75vw;
     grid-row-gap: .5vw;
     grid-column-gap: .5vw;
     grid-template-areas: "left right"

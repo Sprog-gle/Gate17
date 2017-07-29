@@ -1,0 +1,402 @@
+{
+    "cornwall-park-information-centre": {
+        "lat": "-36.8978274197",
+        "lng": "174.783480296"
+    },
+    "doc-whakatipu-wai-maori--queenstown-visitor-centre": {
+        "lat": "-45.0309434",
+        "lng": "168.6622649"
+    },
+    "gore-district-council": {
+        "lat": "-46.1022157",
+        "lng": "168.9417613"
+    },
+    "masterton-i-site-visitor-information-centre": {
+        "lat": "-40.9487795",
+        "lng": "175.6652175"
+    },
+    "doc-rotoiti--nelson-lakes-visitor-centre": {
+        "lat": "-41.8051387",
+        "lng": "172.8424763"
+    },
+    "hutt-city-i-site-visitor-information-centre": {
+        "lat": "-41.2117639",
+        "lng": "174.9032899"
+    },
+    "havelock-north-i-site-visitor-information-centre": {
+        "lat": "-39.670484",
+        "lng": "176.8766751"
+    },
+    "tauranga-i-site-visitor-information-centre": {
+        "lat": "-37.6832645",
+        "lng": "176.168825"
+    },
+    "martinborough-i-site-visitor-information-centre": {
+        "lat": "-41.216587",
+        "lng": "175.4579016"
+    },
+    "rotorua-i-site-visitor-information-centre": {
+        "lat": "-38.1353836",
+        "lng": "176.2535172"
+    },
+    "redwoods-i-site-visitor-information-centre": {
+        "lat": "-38.1570745606",
+        "lng": "176.272815534"
+    },
+    "christchurch-airport-i-site-visitor-information-centre": {
+        "lat": "-43.4876377928",
+        "lng": "172.540776729"
+    },
+    "napier-i-site-visitor-information-centre": {
+        "lat": "-39.4905453",
+        "lng": "176.9195023"
+    },
+    "hurunui-i-site-visitor-information-centre": {
+        "lat": "-42.5228308",
+        "lng": "172.8288901"
+    },
+    "te-urewera-visitor-centre": {
+        "lat": "-38.7519413",
+        "lng": "177.0258104"
+    },
+    "doc-poneke--wellington-visitor-centre": {
+        "lat": "-41.2899814",
+        "lng": "174.7753233"
+    },
+    "ruapehu-i-site-visitor-information-centre": {
+        "lat": "-39.4181997",
+        "lng": "175.3985324"
+    },
+    "queenstown-i-site-visitor-information-centre": {
+        "lat": "-45.031137",
+        "lng": "168.6605117"
+    },
+    "hokianga-i-site-visitor-information-centre": {
+        "lat": "-35.5052791",
+        "lng": "173.3909774"
+    },
+    "te-takere-levin-i-site-visitor-information-centre": {
+        "lat": "-40.6227234",
+        "lng": "175.2840811"
+    },
+    "tararua-i-site-visitor-information-centre": {
+        "lat": "-40.3367162",
+        "lng": "175.8658775"
+    },
+    "stratford-i-site-visitor-information-centre": {
+        "lat": "-39.3399553",
+        "lng": "174.2837455"
+    },
+    "hastings-i-site-visitor-information-centre": {
+        "lat": "-39.642185",
+        "lng": "176.843346"
+    },
+    "raglan-i-site-visitor-information-centre": {
+        "lat": "-37.8021249",
+        "lng": "174.8685543"
+    },
+    "doc-tititea--mt-aspiring-national-park-visitor-centre": {
+        "lat": "-44.6944746",
+        "lng": "169.1424511"
+    },
+    "franz-josef-i-site-visitor-information-centre-1": {
+        "lat": "-43.3837176",
+        "lng": "170.1829935"
+    },
+    "turangi-i-site-visitor-information-centre": {
+        "lat": "-38.9895809",
+        "lng": "175.8104887"
+    },
+    "featherston-information-centre": {
+        "lat": "-41.1179029676",
+        "lng": "175.3279163"
+    },
+    "doc-tongariro-national-park-visitor-centre": {
+        "lat": "-39.200477",
+        "lng": "175.539473"
+    },
+    "tirau-i-site-visitor-information-centre": {
+        "lat": "-37.9769676",
+        "lng": "175.7563319"
+    },
+    "cambridge-i-site-visitor-information-centre": {
+        "lat": "-37.891848",
+        "lng": "175.467764"
+    },
+    "huntly-i-site-visitor-information-centre": {
+        "lat": "-37.5411886",
+        "lng": "175.1576241"
+    },
+    "palmerston-north-i-site-visitor-information-centre": {
+        "lat": "-40.355701",
+        "lng": "175.611304"
+    },
+    "doc-te-rua-o-te-moko--fiordland-national-park-visitor-centre": {
+        "lat": "-45.4241042962",
+        "lng": "167.71954925"
+    },
+    "thames-i-site-visitor-information-centre": {
+        "lat": "-37.138387",
+        "lng": "175.5409291"
+    },
+    "wellington-i-site-visitor-information-centre": {
+        "lat": "-41.289275",
+        "lng": "174.7768807"
+    },
+    "akaroa-i-site-visitor-information-centre": {
+        "lat": "-43.8050737",
+        "lng": "172.967131"
+    },
+    "palmerston-i-site-visitor-information-centre": {
+        "lat": "-45.4844279",
+        "lng": "170.7154715"
+    },
+    "waihi-i-site-visitor-information-centre": {
+        "lat": "-37.3898468",
+        "lng": "175.8433841"
+    },
+    "auckland-skycity-i-site-visitor-information-centre": {
+        "lat": "-36.8481265",
+        "lng": "174.7622196"
+    },
+    "roxburgh-i-site-visitor-information-centre": {
+        "lat": "-45.5412951",
+        "lng": "169.3153805"
+    },
+    "nz-dream-relocator": {
+        "lat": "51.2279307",
+        "lng": "-1.3346912"
+    },
+    "fiordland-i-site-visitor-information-centre": {
+        "lat": "-45.4174357",
+        "lng": "167.7117645"
+    },
+    "doc-westland-tai-poutini-national-park-visitor-centre-and-i-site": {
+        "lat": "-43.3840038",
+        "lng": "170.1847655"
+    },
+    "westport-i-site-visitor-information-centre": {
+        "lat": "-41.7540945",
+        "lng": "171.5985281"
+    },
+    "kawerau-i-site-visitor-information-centre": {
+        "lat": "-38.0870456",
+        "lng": "176.7003101"
+    },
+    "te-aroha-i-site-visitor-information-centre": {
+        "lat": "-37.545074",
+        "lng": "175.7140666"
+    },
+    "doc-rakiura-national-park-visitor-centre": {
+        "lat": "-46.8982473",
+        "lng": "168.1263304"
+    },
+    "the-hub-information-centre": {
+        "lat": "-35.7249688",
+        "lng": "174.3260832"
+    },
+    "doc-kauaeranga-visitor-centre": {
+        "lat": "-37.1236247",
+        "lng": "175.6265697"
+    },
+    "doc-aoraki--mt-cook-national-park-visitor-centre": {
+        "lat": "-43.7332138",
+        "lng": "170.0955318"
+    },
+    "whitianga-i-site-visitor-information-centre": {
+        "lat": "-36.8348117",
+        "lng": "175.7046654"
+    },
+    "waitomo-i-site-visitor-information-centre": {
+        "lat": "-38.2610075",
+        "lng": "175.1092473"
+    },
+    "opotiki-i-site-visitor-information-centre": {
+        "lat": "-38.0123595",
+        "lng": "177.2832491"
+    },
+    "morrinsville-i-site-visitor-information-centre": {
+        "lat": "-37.6564914",
+        "lng": "175.5307719"
+    },
+    "cromwell-i-site-visitor-information-centre": {
+        "lat": "-45.036461",
+        "lng": "169.1971661"
+    },
+    "picton-i-site-visitor-information-centre": {
+        "lat": "-41.2879405",
+        "lng": "174.00537"
+    },
+    "bay-of-islands-i-site-visitor-information-centre": {
+        "lat": "-35.2812508",
+        "lng": "174.0921287"
+    },
+    "te-awamutu-i-site-visitor-information-centre": {
+        "lat": "-38.008159",
+        "lng": "175.3281"
+    },
+    "gisborne-i-site-visitor-information-centre": {
+        "lat": "-38.6675896",
+        "lng": "178.0202878"
+    },
+    "paraparaumu-i-site-visitor-information-centre": {
+        "lat": "-40.922059",
+        "lng": "175.0022648"
+    },
+    "whanganui-i-site-visitor-information-centre": {
+        "lat": "-39.9343103",
+        "lng": "175.05656"
+    },
+    "tokoroa-i-site-visitor-information-centre": {
+        "lat": "-38.218281",
+        "lng": "175.87328"
+    },
+    "matamata-i-site-visitor-information-centre": {
+        "lat": "-37.8093518",
+        "lng": "175.7720845"
+    },
+    "taupo-i-site-visitor-information-centre": {
+        "lat": "-38.6869816",
+        "lng": "176.0693263"
+    },
+    "new-plymouth-i-site-visitor-information-centre": {
+        "lat": "-39.0566594",
+        "lng": "174.0719894"
+    },
+    "ashburton-i-site-visitor-information-centre": {
+        "lat": "-43.9043483",
+        "lng": "171.7476273"
+    },
+    "otorohanga-i-site-visitor-information-centre": {
+        "lat": "-38.185837",
+        "lng": "175.210454"
+    },
+    "wairoa-i-site-visitor-information-centre": {
+        "lat": "-39.0344279",
+        "lng": "177.4183769"
+    },
+    "christchurch-i-site-visitor-information-centre": {
+        "lat": "-43.5311167",
+        "lng": "172.6295909"
+    },
+    "warkworth-i-site-visitor-information-centre": {
+        "lat": "-36.397635",
+        "lng": "174.6661361"
+    },
+    "doc-nelson-visitor-centre": {
+        "lat": "-41.2705118",
+        "lng": "173.2840298"
+    },
+    "taumarunui-i-site-visitor-information-centre": {
+        "lat": "-38.8828781",
+        "lng": "175.2650185"
+    },
+    "doc-rotorua-visitor-centre": {
+        "lat": "-38.1355609",
+        "lng": "176.2534292"
+    },
+    "whakatane-i-site-visitor-information-centre": {
+        "lat": "-37.9499062492",
+        "lng": "176.998323798"
+    },
+    "ranfurly-i-site-visitor-information-centre": {
+        "lat": "-45.1300347",
+        "lng": "170.0993356"
+    },
+    "alexandra-i-site-visitor-information-centre": {
+        "lat": "-45.2540669",
+        "lng": "169.3913577"
+    },
+    "far-north-i-site-visitor-information-centre": {
+        "lat": "-35.117298",
+        "lng": "173.267886"
+    },
+    "dunedin-i-site-visitor-information-centre": {
+        "lat": "-45.8735459",
+        "lng": "170.5036736"
+    },
+    "hokitika-i-site-visitor-information-centre": {
+        "lat": "-42.718331",
+        "lng": "170.964484"
+    },
+    "whangarei-i-site-visitor-information-centre": {
+        "lat": "-35.738388",
+        "lng": "174.3100818"
+    },
+    "doc-otepoti--dunedin-visitor-centre": {
+        "lat": "-45.8735608",
+        "lng": "170.503754"
+    },
+    "visitor-information-centre-dargaville-and-the-kauri-coast": {
+        "lat": "-35.9511703593",
+        "lng": "173.864294109"
+    },
+    "upper-hutt-i-site-visitor-information-centre": {
+        "lat": "-41.126237",
+        "lng": "175.067135"
+    },
+    "reefton-i-site-visitor-information-centre": {
+        "lat": "-42.1196443",
+        "lng": "171.8643287"
+    },
+    "doc-arthurs-pass-national-park-visitor-centre": {
+        "lat": "-42.9458038",
+        "lng": "171.5652943"
+    },
+    "doc-otautahi--christchurch-visitor-centre": {
+        "lat": "-43.5311167",
+        "lng": "172.6295909"
+    },
+    "kaiapoi-i-site-visitor-information-centre": {
+        "lat": "-43.3817232886",
+        "lng": "172.658498218"
+    },
+    "blenheim-i-site-visitor-information-centre": {
+        "lat": "-41.5093062",
+        "lng": "173.9596609"
+    },
+    "greymouth-i-site-visitor-information-centre": {
+        "lat": "-42.4481012",
+        "lng": "171.2147769"
+    },
+    "nelson-i-site-visitor-information-centre": {
+        "lat": "-41.2703781",
+        "lng": "173.2844541"
+    },
+    "kaikoura-i-site-visitor-information-centre": {
+        "lat": "-42.4028003",
+        "lng": "173.6831978"
+    },
+    "doc-awarua--haast-visitor-centre": {
+        "lat": "-43.8594545717",
+        "lng": "169.044236452"
+    },
+    "south-taranaki-i-site-visitor-information-centre": {
+        "lat": "-39.5898195",
+        "lng": "174.285287"
+    },
+    "hamilton-i-site-visitor-information-centre": {
+        "lat": "-37.7881748",
+        "lng": "175.2816038"
+    },
+    "doc-dawson-falls-visitor-centre": {
+        "lat": "-39.4050249",
+        "lng": "174.1512445"
+    },
+    "auckland-airport-international-terminal-i-site-visitor-information-centre": {
+        "lat": "-37.004771",
+        "lng": "174.78361"
+    },
+    "te-kuiti-i-site-visitor-information-centre": {
+        "lat": "-38.335218",
+        "lng": "175.165778"
+    },
+    "doc-taranaki--egmont-national-park-visitor-centre": {
+        "lat": "-39.2702625",
+        "lng": "174.0959411"
+    },
+    "doc-paparoa-national-park-visitor-centre": {
+        "lat": "-42.1242616",
+        "lng": "171.3296277"
+    }
+}
