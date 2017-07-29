@@ -5,21 +5,107 @@
  *
  * Made By MaterializeCSS.com
  */
-
+html{
+  max-width: 100vw;
+}
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
 }
+.grid{
+  display:grid;
+  max-width: 100vw;
+}
+.item-l{
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+), url("/static/images/Map.png");
+  background-size: cover;
+}
+.item-r{
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+),  url("/static/images/oldperson.png");
+  background-size: cover;
 
+}
+.item-b{
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+), url("/static/images/manage.png");
+  background-size: cover;
+}
 @media (max-width: 600px){
+  #map{
+    width:100vh;
+    height: 80vh;
+  }
   .brand-logo{
     height: 56px !important;
   }
+  .item-l{
+    grid-area:left;
+  }
+  .item-r{
+    grid-area:right;
+  }
+  .item-b{
+    grid-area: bottom;
+  }
+  .grid{
+    grid-template-rows: 100vh 100vh 100vh;
+    grid-template-columns: 49vw 49vw;
+    grid-row-gap: .5vw;
+    grid-row-gap: .5vw;
+    grid-template-areas: "left left"
+    "right right"
+      "bottom bottom";
+  }
+
 }
 @media (min-width: 600px){
   .brand-logo{
     height: 64px !important;
+  }
+  .item-l{
+    grid-area:left;
+  }
+  .item-r{
+    grid-area:right;
+  }
+  .item-b{
+    grid-area: bottom;
+  }
+  .grid{
+    grid-template-rows: 100vh 50vh;
+    grid-template-columns: 49vw 49vw;
+    grid-row-gap: .5vw;
+    grid-column-gap: .5vw;
+    grid-template-areas: "left right"
+      "bottom bottom";
+  }
+}
+@media (min-width: 1200px){
+  .item-l{
+    grid-area:left;
+  }
+  .item-r{
+    grid-area:right;
+  }
+  .item-b{
+    grid-area: bottom;
+  }
+  .grid{
+    grid-template-rows: 100vh 50vh;
+    grid-template-columns: 49vw 49vw;
+    grid-row-gap: .5vw;
+    grid-column-gap: .5vw;
+    grid-template-areas: "left right"
+      "bottom bottom";
   }
 }
