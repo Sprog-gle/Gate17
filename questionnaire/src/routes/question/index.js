@@ -147,6 +147,9 @@ class Questions extends Component {
         .then(response => response.json())
         .then(json => console.log(json));*/
 
+      // COMPLETE THE FORM (WITHOUT THE DEBUGGER OR ELSE U CANT SEE THE END OF THE MODAL);
+      // THEN ONCE U SUBMIT U WILL SEE THE VALUES; fetch is like $.JSON but its a wrapper around XmlHttpRequest
+      // https://developer.mozilla.org/en/docs/Web/API/Fetch_API
       console.log(
         this.state.dropdown,
         this.state.name,
