@@ -994,7 +994,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.4.7:
+bluebird@^3.4.1, bluebird@^3.4.7:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
@@ -2482,7 +2482,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.6, fbjs@^0.8.9:
   version "0.8.14"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.14.tgz#d1dbe2be254c35a91e09f31f9cd50a40b2a0ed1c"
   dependencies:
@@ -5067,6 +5067,14 @@ react-event-listener@^0.4.5:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-here-maps@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-here-maps/-/react-here-maps-0.4.0.tgz#13797287fb4cb10ada1ca61ba06ce518baa46d13"
+  dependencies:
+    bluebird "^3.4.1"
+    core-js "^2.4.1"
+    lodash "^4.15.0"
+
 react-live@^1.5.2:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-live/-/react-live-1.7.0.tgz#014ae5cce62fe8262a4b116be4820119653af9f7"
@@ -5129,6 +5137,12 @@ react-scripts@1.0.10:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "1.1.2"
+
+react-tap-event-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
+  dependencies:
+    fbjs "^0.8.6"
 
 react-transition-group@^1.1.2:
   version "1.2.0"
