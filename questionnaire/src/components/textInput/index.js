@@ -3,13 +3,14 @@ import AutoComplete from "material-ui/AutoComplete";
 
 import "./textInput.css";
 
-const TextInput = ({ dataSource }) =>
+const TextInput = ({ placeholder, hintText, dataSource = [], onChange }) =>
   <AutoComplete
-    hintText="Type anything"
+    hintText={hintText}
     dataSource={dataSource}
-    floatingLabelText="Full width"
+    floatingLabelText={placeholder}
     fullWidth={true}
     className="textInput"
+    onUpdateInput={onChange}
   />;
 
 export default TextInput;
