@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Gate 17</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection"
+    />
+    <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="orange" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo waves-effect waves-dark"><img class="brand-logo responsive-img" src="{{url_for('static', filename='images/gate-17logo1.png')}}" /></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="black-text waves-effect waves-dark modal-trigger" href="#about">About</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav grey darken-4">
+                <li><a href="#about" class="black-text waves-effect waves-dark modal-trigger">About</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="waves-effect waves-dark button-collapse"><i class="material-icons black-text">menu</i></a>
+    </nav>
+
+    <div id="about" class="modal">
+        <div class="modal-content">
+            <h4>Gate 17</h4>
+            <p class="flow-text">Powered by Air New Zealand.</p>
+        </div>
+    </div>
+
+    <div id="map" style="width: 100%; height: 75vh;background:grey;z-index:1;">
+        
+    </div>
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Gate 17</h5>
+                    <p class="grey-text text-lighten-4">We are a team from Air New Zealand working on a project for GovHack 2017.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Thanks</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://www.airnewzealand.co.nz/">Air NZ</a></li>
+                        <li><a class="white-text" href="http://govhack.org.nz/">GovHack</a></li>
+                        <li><a class="white-text" href="http://www.iag.co.nz/">IAG</a></li>
+                        <li><a class="white-text" href="https://here.com/en">Here</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Data</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="#">Gate 17</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/init.js')}}"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-clustering.js"></script>
+    <script type="text/javascript" src="https://js.cit.datalens.api.here.com/2.5/mapsjs-datalens.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="{{url_for('static', filename='js/map.js')}}"></script>
+</body>
+
+</html>
