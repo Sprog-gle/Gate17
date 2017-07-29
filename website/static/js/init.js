@@ -6,6 +6,11 @@ var swampObjects = [];
 var swampact = false;
 var residentialObjects = [];
 var residentialact = false;
+var infocentersObjects = [];
+var infocentersact = false;
+var schoolsObjects = [];
+var schoolsact = false;
+
 var map;
 
 (function($) {
