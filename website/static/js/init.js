@@ -10,8 +10,7 @@ var infocentersObjects = [];
 var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
-vat lostObjects = [] ;
-var lostact = true
+
 var map;
 (function($) {
     $(function() {
@@ -78,17 +77,6 @@ var map;
                 schoolsact = true;
             }
         });
-
-        $("#lostaction").click(function() {
-            if (lostact) {
-                map.removeObjects(lostObjects);
-                lostact = false;
-            } else {
-                map.addObjects(lostObjects);
-                lostact = true;
-            }
-        });
-
 
         $('.button-collapse').sideNav();
         $('.modal').modal();
@@ -203,13 +191,6 @@ var map;
                     schoolsObjects.push(circle);
                 }
             });
-
-            $.getJSON("/lost", function(data) {
-                for (x in data.lost) {
-                  console.log(x)
-                }
-            });
-
 
         });
         $(".item-r").click(function() {
