@@ -11,12 +11,6 @@
     <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection"
     />
     <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/favicon-16x16.png')}}">
-    <link rel="manifest" href="{{url_for('static', filename='images/manifest.json')}}">
-    <link rel="mask-icon" href="{{url_for('static', filename='images//safari-pinned-tab.svg')}}" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -88,7 +82,7 @@
                         <div class="input-field col s12">
                             <select id="profiles" class="validate">
                                 <option value="Dementia">Dementia</option>
-                                <option value="Pain">Pain</option>
+                                <option value="Pain">Pain</option>   
                                 </select>
                             <label for="profiles">Lost person behaviour subject profiles</label>
                         </div>
@@ -156,13 +150,13 @@
             </a>
             <ul>
                 <li><a id="rapidaction" class="btn-floating blue tooltipped" data-position="top" data-delay="20" data-tooltip="show rapids"><i class="material-icons">pool</i></a></li>
-                <li><a id="residentialaction" class="btn-floating red darken-1 tooltipped" data-position="top" data-delay="20" data-tooltip="residential areas"><i class="material-icons">location_city</i></a></li>
+                <li><a id="residentialaction" class="btn-floating red darken-1 tooltipped" data-position="top" data-delay="20"
+                        data-tooltip="residential areas"><i class="material-icons">location_city</i></a></li>
                 <li><a id="swampaction" class="btn-floating black tooltipped" data-position="top" data-delay="20" data-tooltip="swamp areas"><i class="material-icons">nature_people</i></a></li>
                 <li><a id="tidalaction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="tidal areas"><i class="material-icons">opacity</i></a></li>
                 <li><a id="infocenteraction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="tidal areas"><i class="material-icons">opacity</i></a></li>
                 <li><a id="schoolaction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="tidal areas"><i class="material-icons">opacity</i></a></li>
                 <li><a id="lostaction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="Lost"><i class="material-icons">opacity</i></a></li>
-
 
             </ul>
         </div>
