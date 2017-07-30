@@ -10,8 +10,6 @@ var infocentersObjects = [];
 var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
-var lostObjects = [];
-var lostact = false;
 
 var map;
 (function($) {
