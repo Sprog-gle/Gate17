@@ -12,7 +12,22 @@ We see this as helping find missing children, dementia or mentally disabled peop
 
 Missing people can be reported through our website https://gate17.tech OR https://gate17.space  by filling in a questionaire which identifies search zones and then notifications are sent out to Raven volunteers.
 
-#Notes 
+# Notes 
 Michael Ng 29JUL07 4:10PM MEL : questions and swamps script added to melbourne folder.
 
-Jack added this comment to ruin this README.md and to test if can push.
+# Datasets
+
+Dataset Name: Christchurch Post-Earthquake 0.1m Urban Aerial Photos (24 February 2011)
+Dataset URL: https://data.linz.govt.nz/layer/1932-christchurch-post-earthquake-01m-urban-aer…
+
+Dataset Name: NZ Residential Area Polygons (Topo, 1:500k)
+Dataset URL : https://data.linz.govt.nz/layer/222-nz-residential-area-polygons-topo-1500k/
+
+Dataset Name: NZ Swamp Polygons (Topo, 1:250k)
+Dataset URL : https://data.linz.govt.nz/layer/193-nz-swamp-polygons-topo-1250k/
+
+Dataset Name: Tideway polygon (Hydro, 1:90k - 1:350k)
+Dataset URL: https://data.linz.govt.nz/layer/1220-tideway-polygon-hydro-190k-1350k/
+
+Dataset Name: NZ Rapid Polygons (Topo, 1:50k)
+Dataset URL: https://data.linz.govt.nz/layer/321-nz-rapid-polygons-topo-150k/
