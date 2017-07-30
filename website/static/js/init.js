@@ -78,7 +78,7 @@ var schoolsact = false;
           lng: 174.18283828125004
       });
       map1.setZoom(8);
-      map1.addEventListener('tap', (evt) => console.log(evt));
+      map1.addEventListener('tap', (evt) => console.log(evt.current.pointer));
       //moveMapToNZ(map1);
     });
 
