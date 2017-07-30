@@ -40,7 +40,28 @@ html{
 ), url("/static/images/manage.png");
   background-size: cover;
 }
+.home-screen-landing{
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+}
 @media (max-width: 600px){
+  #raven-logo{
+    grid-area: top;
+    width: 100vw;
+    height: 50vw;
+  }
+  #gate-logo{
+    grid-area: bottom;
+    width: 100vw;
+    height: 50vw;
+  }
+  #home-screen-landing{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: "top top"
+                          "bottom bottom";
+  }
   #map{
     width:100vh;
     height: 80vh;
@@ -69,6 +90,18 @@ html{
 
 }
 @media (min-width: 600px){
+  .raven-logo{
+    grid-area: left;
+  }
+  .gate-logo{
+    grid-area: right;
+
+  }
+  .home-screen-landing{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+    grid-template-areas: "left right";
+  }
   .brand-logo{
     height: 64px !important;
   }
