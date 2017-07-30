@@ -10,6 +10,8 @@ var infocentersObjects = [];
 var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
+var lostObjects = [];
+var lostact = false;
 
 var map;
 (function($) {
@@ -77,6 +79,24 @@ var map;
                 schoolsact = true;
             }
         });
+
+        $("#lostaction").click(function() {
+
+            var lastSeenList = [] ;
+            for(i in lostObjects){
+                    p = lostObjects[i]
+                    lastSeenList.push(p.lastSeenMap)
+             }
+            console.log(lastSeenList) ;
+            if (lostact) {
+                map.removeObjects(lastSeenList);
+                lostact = false;
+            } else {
+                 map.addObjects(lastSeenList);
+                lostact = true;
+            }
+        });
+
 
         $('.button-collapse').sideNav();
         $('.modal').modal();
@@ -190,6 +210,20 @@ var map;
                     });
                     schoolsObjects.push(circle);
                 }
+            });
+
+            $.getJSON("/lost", function(data) {
+                for (x in data.lost) {
+                    var p =  data.lost[x];
+                    p.lastSeenMap = new H.map.Circle(p.lastSeenPlace, 10000, {
+                        style: {
+                            fillColor: "pink",
+                            strokeColor: "red"
+                        }
+                    });
+                    lostObjects.push(p);
+                 }
+
             });
 
         });
