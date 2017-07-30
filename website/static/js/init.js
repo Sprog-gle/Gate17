@@ -10,8 +10,13 @@ var infocentersObjects = [];
 var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
+var lostObjects = [] ;
+var lostact = false;
 
 var map;
+var ui ;
+var group ;
+
 (function($) {
     $(function() {
         $("#lostuser").click(function() {
@@ -91,6 +96,7 @@ var map;
                 lostact = false;
             } else {
                  map.addObjects(lastSeenList);
+                 group.addObjects(lastSeenList);
                 lostact = true;
             }
         });
@@ -124,7 +130,23 @@ var map;
             var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
             // Create the default UI components
-            var ui = H.ui.UI.createDefault(map, defaultLayers);
+            ui = H.ui.UI.createDefault(map, defaultLayers);
+
+            group = new H.map.Group();
+            map.addObject(group);
+
+              group.addEventListener('tap', function (evt) {
+                    // event target is the marker itself, group is a parent event target
+                    // for all objects that it contains
+                    var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+                      // read custom data
+                      content: evt.target.getData()
+                    });
+                    // show info bubble
+                    ui.addBubble(bubble);
+                  }, false);
+
+
             moveMapToNZ(map);
             $.getJSON("/swamps", function(data) {
                 var y;
@@ -213,15 +235,11 @@ var map;
             $.getJSON("/lost", function(data) {
                 for (x in data.lost) {
                     var p =  data.lost[x];
-                    p.lastSeenMap = new H.map.Circle(p.lastSeenPlace, 10000, {
-                        style: {
-                            fillColor: "pink",
-                            strokeColor: "red"
-                        }
-                    });
+                    var marker = new H.map.Marker(p.lastSeenPlace);
+                    marker.setData('<div>' +  p.name + '</div>');
+                    p.lastSeenMap = marker ;
                     lostObjects.push(p);
-                 }
-
+                  }
             });
 
         });
