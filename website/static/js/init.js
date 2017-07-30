@@ -10,7 +10,11 @@ var infocentersObjects = [];
 var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
+var lostObjects = [] ;
+var lostact = false;
 
+var map ;
+var group
 (function($) {
   $(function() {
     var platform = new H.service.Platform({
@@ -151,6 +155,23 @@ var schoolsact = false;
         schoolsact = true;
       }
     });
+        $("#lostaction").click(function() {
+
+            var lastSeenList = [] ;
+            for(i in lostObjects){
+                    p = lostObjects[i]
+                    lastSeenList.push(p.lastSeenMap)
+             }
+            console.log(lastSeenList) ;
+            if (lostact) {
+                map.removeObjects(lastSeenList);
+                lostact = false;
+            } else {
+                 map.addObjects(lastSeenList);
+                lostact = true;
+            }
+        });
+
 
     $(".button-collapse").sideNav();
     $(".modal").modal();
@@ -161,7 +182,6 @@ var schoolsact = false;
       $("#home").addClass("hide");
       $("#map").removeClass("hide");
 
-      var map;
       function moveMapToNZ(map) {
         map.setCenter({
           lat: -41.29798905219789,
@@ -181,6 +201,19 @@ var schoolsact = false;
       // Create the default UI components
       ui = H.ui.UI.createDefault(map, defaultLayers);
       moveMapToNZ(map);
+            group = new H.map.Group();
+            map.addObject(group);
+
+              group.addEventListener('tap', function (evt) {
+                    // event target is the marker itself, group is a parent event target
+                    // for all objects that it contains
+                    var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+                      // read custom data
+                      content: evt.target.getData()
+                    });
+                    // show info bubble
+                    ui.addBubble(bubble);
+                  }, false);
 
       $.getJSON("/swamps", function(data) {
         var y;
@@ -254,6 +287,16 @@ var schoolsact = false;
           infocentersObjects.push(circle);
         }
       });
+
+     $.getJSON("/lost", function(data) {
+                for (x in data.lost) {
+                    var p =  data.lost[x];
+                    var marker = new H.map.Marker(p.lastSeenPlace);
+                    marker.setData('<div>' +  p.name + '</div>');
+                    p.lastSeenMap = marker ;
+                    lostObjects.push(p);
+                  }
+            });
 
       $.getJSON("/schools", function(data) {
         for (x in data) {
