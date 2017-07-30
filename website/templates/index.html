@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='images/manifest.json')}}">
+    <link rel="mask-icon" href="{{url_for('static', filename='images//safari-pinned-tab.svg')}}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <script type="application/json">
         var swaps = {
             {
@@ -23,7 +29,7 @@
     <div class="home-screen-landing ">
         <div class="gate-logo valign-wrapper">
             <div class="center-align" style="width:100%;">
-                <a href="#gate17"><img class="responsive-img tooltipped" data-position="top" data-delay="20" data-tooltip="The Team" width="150" src="{{url_for('static', filename='images/gate-17logo1.png')}}" /></a>
+                <a href="#gate17" class="modal-trigger"><img class="responsive-img tooltipped" data-position="top" data-delay="20" data-tooltip="The Team" width="150" src="{{url_for('static', filename='images/gate-17logo1.png')}}" /></a>
             </div>
 
         </div>
@@ -37,7 +43,15 @@
     </div>
     <div class="modal" id="gate17">
       <div class="modal-content">
-        <h2>Gate 17</h2>
+        <h2 class="center-align">Gate 17</h2
+          <div class="center-align">
+            <p class="flow-text center-align">
+              We are a team for GovHack 2017 from Air New Zealand.<br />
+              We created an application for helping search and rescue with finding the lost.<br />
+              We called this Project Raven.<br />
+            </p>
+          </div>
+
       </div>
     </div>
     <!--  Scripts-->
