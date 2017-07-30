@@ -11,9 +11,15 @@ var infocentersact = false;
 var schoolsObjects = [];
 var schoolsact = false;
 
-var map;
 (function($) {
   $(function() {
+    var platform = new H.service.Platform({
+      app_id: "BtRgpFTmtEuUrzEKGY7W",
+      app_code: "REnj-MMTZHpj29yC9JeFnw",
+      useCIT: true,
+      useHTTPS: true
+    });
+
     $("select").material_select();
 
     $("#severity").autocomplete({
@@ -44,15 +50,16 @@ var map;
     });
     $("#form-submit").click(function() {
       $("#lost-friend-form").addClass("hide");
-      $("#map-possible-location1").removeClass("hide");
-      $("#home").addClass("hide");
-      $("#lost").modal("close");
-      var platform = new H.service.Platform({
-        app_id: "BtRgpFTmtEuUrzEKGY7W",
-        app_code: "REnj-MMTZHpj29yC9JeFnw",
-        useCIT: true,
-        useHTTPS: true
-      });
+      //$("#map-possible-location1").removeClass("hide");
+      //$("#home").addClass("hide");
+      // $("#lost").modal("close");
+      $("#map1").removeClass("hide");
+
+      var defaultLayers = platform.createDefaultLayers();
+      var map1 = new H.Map(
+        document.getElementById("map1"),
+        defaultLayers.satellite.map
+      );
 
       function moveMapToNZ(map) {
         map.setCenter({
@@ -62,16 +69,21 @@ var map;
         map.setZoom(6);
       }
 
-      var defaultLayers = platform.createDefaultLayers();
-      map = new H.Map(
-        document.getElementById("map"),
-        defaultLayers.satellite.map
-      );
-      var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map1));
 
       // Create the default UI components
-      var ui = H.ui.UI.createDefault(map, defaultLayers);
-      moveMapToNZ(map);
+      ui = H.ui.UI.createDefault(map1, defaultLayers);
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          map1.setCenter({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+          map1.setZoom(8);
+        });
+      } else {
+      }
+      //moveMapToNZ(map1);
     });
 
     $("#lostuser").click(function() {
@@ -147,13 +159,8 @@ var map;
     $(".item-l").click(function() {
       $("#home").addClass("hide");
       $("#map").removeClass("hide");
-      var platform = new H.service.Platform({
-        app_id: "BtRgpFTmtEuUrzEKGY7W",
-        app_code: "REnj-MMTZHpj29yC9JeFnw",
-        useCIT: true,
-        useHTTPS: true
-      });
 
+      var map;
       function moveMapToNZ(map) {
         map.setCenter({
           lat: -41.29798905219789,
@@ -167,11 +174,13 @@ var map;
         document.getElementById("map"),
         defaultLayers.satellite.map
       );
-      var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+      behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
       // Create the default UI components
-      var ui = H.ui.UI.createDefault(map, defaultLayers);
+      ui = H.ui.UI.createDefault(map, defaultLayers);
       moveMapToNZ(map);
+
       $.getJSON("/swamps", function(data) {
         var y;
         for (x in data.swamps) {
