@@ -77,6 +77,7 @@ var group
 
       // Create the default UI components
       ui = H.ui.UI.createDefault(map1, defaultLayers);
+      
       map1.setCenter({
           lat: -41.29798905219789,
           lng: 174.18283828125004
