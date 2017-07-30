@@ -13,10 +13,8 @@ var schoolsact = false;
 var lostObjects = [] ;
 var lostact = false;
 
-var map;
-var ui ;
-var group ;
-
+var map ;
+var group
 (function($) {
   $(function() {
     var platform = new H.service.Platform({
@@ -152,15 +150,6 @@ var group ;
         schoolsact = true;
       }
     });
-
-    $(".button-collapse").sideNav();
-    $(".modal").modal();
-    $(".item-r").click(function() {
-      $("#lost").modal("open");
-    });
-    $(".item-l").click(function() {
-      $("#home").addClass("hide");
-      $("#map").removeClass("hide");
         $("#lostaction").click(function() {
 
             var lastSeenList = [] ;
@@ -174,28 +163,20 @@ var group ;
                 lostact = false;
             } else {
                  map.addObjects(lastSeenList);
-                 group.addObjects(lastSeenList);
                 lostact = true;
             }
         });
 
 
-        $('.button-collapse').sideNav();
-        $('.modal').modal();
-        $(".item-r").click(function() {
-            $("#lost").modal('open');
-        })
-        $(".item-l").click(function() {
-            $("#home").addClass("hide");
-            $("#map").removeClass("hide");
-            var platform = new H.service.Platform({
-                app_id: 'BtRgpFTmtEuUrzEKGY7W',
-                app_code: 'REnj-MMTZHpj29yC9JeFnw',
-                useCIT: true,
-                useHTTPS: true
-            });
+    $(".button-collapse").sideNav();
+    $(".modal").modal();
+    $(".item-r").click(function() {
+      $("#lost").modal("open");
+    });
+    $(".item-l").click(function() {
+      $("#home").addClass("hide");
+      $("#map").removeClass("hide");
 
-      var map;
       function moveMapToNZ(map) {
         map.setCenter({
           lat: -41.29798905219789,
@@ -215,6 +196,19 @@ var group ;
       // Create the default UI components
       ui = H.ui.UI.createDefault(map, defaultLayers);
       moveMapToNZ(map);
+            group = new H.map.Group();
+            map.addObject(group);
+
+              group.addEventListener('tap', function (evt) {
+                    // event target is the marker itself, group is a parent event target
+                    // for all objects that it contains
+                    var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+                      // read custom data
+                      content: evt.target.getData()
+                    });
+                    // show info bubble
+                    ui.addBubble(bubble);
+                  }, false);
 
       $.getJSON("/swamps", function(data) {
         var y;
@@ -264,110 +258,32 @@ var group ;
           rapidObjects.push(polyline);
         }
       });
-            // Create the default UI components
-            ui = H.ui.UI.createDefault(map, defaultLayers);
 
-            group = new H.map.Group();
-            map.addObject(group);
+      $.getJSON("/tidal", function(data) {
+        for (x in data.tidals) {
+          var circle = new H.map.Circle(data.tidals[x], 800, {
+            style: {
+              fillColor: "yellow",
+              strokeColor: "orange"
+            }
+          });
+          tidalObjects.push(circle);
+        }
+      });
 
-              group.addEventListener('tap', function (evt) {
-                    // event target is the marker itself, group is a parent event target
-                    // for all objects that it contains
-                    var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
-                      // read custom data
-                      content: evt.target.getData()
-                    });
-                    // show info bubble
-                    ui.addBubble(bubble);
-                  }, false);
+      $.getJSON("/infocenters", function(data) {
+        for (x in data) {
+          var circle = new H.map.Circle(data[x], 800, {
+            style: {
+              fillColor: "white",
+              strokeColor: "orange"
+            }
+          });
+          infocentersObjects.push(circle);
+        }
+      });
 
-
-            moveMapToNZ(map);
-            $.getJSON("/swamps", function(data) {
-                var y;
-                for (x in data.swamps) {
-                    var points = data.swamps[x][Object.keys(data.swamps[x])[0]];
-                    var strip = new H.geo.Strip();
-                    points.forEach(function(point) {
-                        strip.pushPoint(point);
-                    });
-                    var polyline = new H.map.Polyline(strip, {
-                        style: {
-                            lineWidth: 5,
-                            strokeColor: 'black'
-                        }
-                    });
-                    swampObjects.push(polyline);
-                }
-                for (x in data.residentials) {
-                    var points = data.residentials[x][Object.keys(data.residentials[x])[0]];
-                    console.log(points);
-                    var strip = new H.geo.Strip();
-                    points.forEach(function(point) {
-                        strip.pushPoint(point);
-                    });
-                    var polyline = new H.map.Polyline(strip, {
-                        style: {
-                            lineWidth: 5,
-                            strokeColor: 'red'
-                        }
-                    });
-                    residentialObjects.push(polyline);
-                }
-                for (x in data.rapids) {
-                    var points = data.rapids[x][Object.keys(data.rapids[x])[0]];
-                    console.log(points);
-                    var strip = new H.geo.Strip();
-                    points.forEach(function(point) {
-                        strip.pushPoint(point);
-                    });
-                    var polyline = new H.map.Polyline(strip, {
-                        style: {
-                            lineWidth: 5,
-                            strokeColor: 'blue'
-                        }
-                    });
-                    rapidObjects.push(polyline);
-                }
-            });
-
-            $.getJSON("/tidal", function(data) {
-                for (x in data.tidals) {
-                    var circle = new H.map.Circle(data.tidals[x], 800, {
-                        style: {
-                            fillColor: "yellow",
-                            strokeColor: "orange"
-                        }
-                    });
-                    tidalObjects.push(circle);
-                }
-            });
-
-            $.getJSON("/infocenters", function(data) {
-                for (x in data) {
-                    var circle = new H.map.Circle(data[x], 800, {
-                        style: {
-                            fillColor: "white",
-                            strokeColor: "orange"
-                        }
-                    });
-                    infocentersObjects.push(circle);
-                }
-            });
-
-            $.getJSON("/schools", function(data) {
-                for (x in data) {
-                    var circle = new H.map.Circle(data[x], 800, {
-                        style: {
-                            fillColor: "red",
-                            strokeColor: "white"
-                        }
-                    });
-                    schoolsObjects.push(circle);
-                }
-            });
-
-            $.getJSON("/lost", function(data) {
+     $.getJSON("/lost", function(data) {
                 for (x in data.lost) {
                     var p =  data.lost[x];
                     var marker = new H.map.Marker(p.lastSeenPlace);
@@ -377,9 +293,18 @@ var group ;
                   }
             });
 
-        });
-        $(".item-r").click(function() {
-
-        });
-    }); // end of document ready
+      $.getJSON("/schools", function(data) {
+        for (x in data) {
+          var circle = new H.map.Circle(data[x], 800, {
+            style: {
+              fillColor: "red",
+              strokeColor: "white"
+            }
+          });
+          schoolsObjects.push(circle);
+        }
+      });
+    });
+    $(".item-r").click(function() {});
+  }); // end of document ready
 })(jQuery); // end of jQuery name space
