@@ -8,7 +8,8 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection"
+    />
     <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon-32x32.png')}}">
@@ -31,7 +32,8 @@
         </div>
         <div class="item-r valign-wrapper" href="#lost">
             <div class="center-align" style="width:100%;">
-                <h1 class="align-center flow-text white-text">Lost</h1></div>
+                <h1 class="align-center flow-text white-text">Lost</h1>
+            </div>
         </div>
         <div class="item-b valign-wrapper">
             <div class="center-align" style="width:100%;">
@@ -45,44 +47,106 @@
             </div>
         </div>
         <div id="lost" class="modal">
-            <div class="modal-content">
-                <h3 class="center-align">Lost</h3>
-                <div class="center-align">
-                    <a id="lostuser" class="waves-effect waves-dark">
-                        <p class="flow-text center-align black-text">
-                            Are you lost?
-                        </p>
-                    </a>
+            <div class="modal-content" id="modal-content">
+                <div id="lost-options">
+                    <h3 class="center-align">Lost</h3>
+                    <div class="center-align">
+                        <a id="lostuser" class="waves-effect waves-dark">
+                            <p class="flow-text center-align black-text">
+                                Are you lost?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-dark" id="lost-friend">
+                            <p class="flow-text center-align black-text">
+                                Are you concerned a family member or friend is lost?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-dark">
+                            <p class="flow-text center-align black-text">
+                                Have you lost a pet?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-dark">
+                            <p class="flow-text center-align black-text">
+                                Have you lost a possession?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-dark">
+                            <p class="flow-text center-align black-text">
+                                Have you lost something else?
+                            </p>
+                        </a>
+                    </div>
                 </div>
-                <div class="center-align">
-                    <a class="waves-effect waves-dark">
-                        <p class="flow-text center-align black-text">
-                            Are you concerned a family member or friend is lost?
-                        </p>
-                    </a>
-                </div>
-                <div class="center-align">
-                    <a class="waves-effect waves-dark">
-                        <p class="flow-text center-align black-text">
-                            Have you lost a pet?
-                        </p>
-                    </a>
-                </div>
-                <div class="center-align">
-                    <a class="waves-effect waves-dark">
-                        <p class="flow-text center-align black-text">
-                            Have you lost a possession?
-                        </p>
-                    </a>
-                </div>
-                <div class="center-align">
-                    <a class="waves-effect waves-dark">
-                        <p class="flow-text center-align black-text">
-                            Have you lost something else?
-                        </p>
-                    </a>
-                </div>
+                <form class="col s12" id="lost-friend-form" class="hide" action="/lostfriendform" method="POST">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="profiles" class="validate">
+                                <option value="Dementia">Dementia</option>
+                                <option value="Pain">Pain</option>   
+                                </select>
+                            <label for="profiles">Lost person behaviour subject profiles</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="age" type="text" class="validate">
+                            <label for="age">Age</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="severity" class="autocomplete">
+                            <label for="severity">Describe subject as mild, moderate, or severe dementia.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input type="text" class="datepicker" id="last-seen">
+                            <label for="last-seen">Date Born</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <p>
+                                <input name="know-name" type="radio" id="know-name-yes" />
+                                <label for="know-name-yes">Yes</label>
+                            </p>
+                            <p>
+                                <input name="know-name" type="radio" id="know-name-maybe" />
+                                <label for="know-name-maybe">Maybe</label>
+                            </p>
+                            <p>
+                                <input name="know-name" type="radio" id="know-name-no" />
+                                <label for="know-name-no">No</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6 pull-right">
+                            <a class="waves-effect waves-light btn" id="form-submit">Next</a>
+                        </div>
+                    </div>
+                </form>
+                <div id="possible-location" class="hide">
+                    <div id="map-possible-location1" class="hide" style="height: 100vh;background:grey;z-index:1; ">
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -94,7 +158,8 @@
             </a>
             <ul>
                 <li><a id="rapidaction" class="btn-floating blue tooltipped" data-position="top" data-delay="20" data-tooltip="show rapids"><i class="material-icons">pool</i></a></li>
-                <li><a id="residentialaction" class="btn-floating red darken-1 tooltipped" data-position="top" data-delay="20" data-tooltip="residential areas"><i class="material-icons">location_city</i></a></li>
+                <li><a id="residentialaction" class="btn-floating red darken-1 tooltipped" data-position="top" data-delay="20"
+                        data-tooltip="residential areas"><i class="material-icons">location_city</i></a></li>
                 <li><a id="swampaction" class="btn-floating black tooltipped" data-position="top" data-delay="20" data-tooltip="swamp areas"><i class="material-icons">nature_people</i></a></li>
                 <li><a id="tidalaction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="tidal areas"><i class="material-icons">opacity</i></a></li>
                 <li><a id="infocenteraction" class="btn-floating orange tooltipped" data-position="top" data-delay="20" data-tooltip="info centers"><i class="material-icons">opacity</i></a></li>
