@@ -24,8 +24,8 @@ var schoolsact = false;
 
     $("#severity").autocomplete({
       data: {
-        mild: null,
-        moderate: null,
+        "mild": null,
+        "moderate": null,
         "severe dementia": null
       },
       limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
@@ -73,16 +73,12 @@ var schoolsact = false;
 
       // Create the default UI components
       ui = H.ui.UI.createDefault(map1, defaultLayers);
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          map1.setCenter({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          });
-          map1.setZoom(8);
-        });
-      } else {
-      }
+      map1.setCenter({
+          lat: -41.29798905219789,
+          lng: 174.18283828125004
+      });
+      map1.setZoom(8);
+      map1.addEventListener('tap', (evt) => console.log(evt));
       //moveMapToNZ(map1);
     });
 
