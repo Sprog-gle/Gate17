@@ -6,6 +6,11 @@ var swampObjects = [];
 var swampact = false;
 var residentialObjects = [];
 var residentialact = false;
+var infocentersObjects = [];
+var infocentersact = false;
+var schoolsObjects = [];
+var schoolsact = false;
+
 var map;
 (function($) {
     $(function() {
@@ -54,6 +59,25 @@ var map;
                 swampact = true;
             }
         });
+        $("#infocenteraction").click(function() {
+            if (infocentersact) {
+                map.removeObjects(infocentersObjects);
+                infocentersact = false;
+            } else {
+                map.addObjects(infocentersObjects);
+                infocentersact = true;
+            }
+        });
+        $("#schoolaction").click(function() {
+            if (schoolsact) {
+                map.removeObjects(schoolsObjects);
+                schoolsact = false;
+            } else {
+                map.addObjects(schoolsObjects);
+                schoolsact = true;
+            }
+        });
+
         $('.button-collapse').sideNav();
         $('.modal').modal();
         $(".item-r").click(function() {
@@ -143,6 +167,31 @@ var map;
                     tidalObjects.push(circle);
                 }
             });
+
+            $.getJSON("/infocenters", function(data) {
+                for (x in data) {
+                    var circle = new H.map.Circle(data[x], 800, {
+                        style: {
+                            fillColor: "white",
+                            strokeColor: "orange"
+                        }
+                    });
+                    infocentersObjects.push(circle);
+                }
+            });
+
+            $.getJSON("/schools", function(data) {
+                for (x in data) {
+                    var circle = new H.map.Circle(data[x], 800, {
+                        style: {
+                            fillColor: "red",
+                            strokeColor: "white"
+                        }
+                    });
+                    schoolsObjects.push(circle);
+                }
+            });
+
         });
         $(".item-r").click(function() {
 
