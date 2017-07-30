@@ -60,26 +60,31 @@ var schoolsact = false;
         document.getElementById("map1"),
         defaultLayers.satellite.map
       );
-
-      function moveMapToNZ(map) {
-        map.setCenter({
-          lat: -41.29798905219789,
-          lng: 174.18283828125004
+      var moveMapToNZ;
+      var locToZoom;
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            locToZoom= {lat:position.coords.latitude, lng:position.coords.longitude};
         });
-        map.setZoom(6);
+      } else {
+        locToZoom = {lat:-36.8485 , lng: -174.7633};
       }
-
+       moveMapToNZfunction = function(map) {
+        map.setCenter(locToZoom);
+        map.setZoom(8);
+      }
+      moveMapToNZfunction(map1);
       behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map1));
 
       // Create the default UI components
       ui = H.ui.UI.createDefault(map1, defaultLayers);
-      map1.setCenter({
-          lat: -41.29798905219789,
-          lng: 174.18283828125004
-      });
-      map1.setZoom(8);
-      map1.addEventListener('tap', (evt) => console.log(evt.current.pointer));
-      //moveMapToNZ(map1);
+
+      map1.addEventListener('tap', function(evt){
+          var coords = map1.screenToGeo(evt.currentPointer.viewportX,   evt.currentPointer.viewportY);
+          coords = {lat: coords.lat, lng: coords.lng};
+          var marker = new H.map.Marker(coords);
+          map1.addObject(marker);
+      }, false);
     });
 
     $("#lostuser").click(function() {
